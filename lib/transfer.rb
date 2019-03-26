@@ -1,17 +1,15 @@
-require 'pry'
 class Transfer
-  # your code here
-  attr_accessor :transfer, :sender, :receiver, :status, :amount
-  
-  def initialize(sender, receiver, amount, status='pending')
-    #binding.pry
-    @sender= sender
-    @receiver= receiver
-    @amount= amount
-    @status= status
+  # your code here	attr_reader :sender, :receiver, :amount
+attr_accessor :status
+
+   def initialize(sender, receiver, amount)
+    @sender = sender
+    @receiver = receiver
+    @status = "pending"
+    @amount = amount
   end
-  
-  def valid?
+
+   def valid?
     sender.valid? && receiver.valid?
   end
 
@@ -37,4 +35,3 @@ class Transfer
 
      end
   end
-end
